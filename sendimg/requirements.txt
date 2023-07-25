@@ -1,0 +1,3 @@
+imagezmq
+simplejpeg
+opencv-python

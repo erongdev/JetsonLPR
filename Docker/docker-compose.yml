@@ -1,0 +1,23 @@
+
+services: 
+  lpr:
+    image: 'lpr:latest'
+    container_name: lpr
+    restart: always
+    ipc: "host"
+#    stdin_open: true
+#    tty: true
+    environment:
+        TZ: Asia/Bangkok
+    volumes:
+      - '/home/erongeray/lpr:/workspace'
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=$DISPLAY
+    command: bash -c "
+             cd /workspace &&
+             python3 detection_main.py
+             "
+
+
+
